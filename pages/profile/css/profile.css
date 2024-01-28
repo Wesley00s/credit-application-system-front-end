@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.user-info ul li {
+    display: flex;
+}
+
+.info {
+    padding-right: 1vh;
+    font-weight: 600;
+}
+
+.info-content {
+    margin-left: 1vh;
+    font-weight: normal;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh;
+    width: fit-content;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 2vh;
+}
+
+.content {
+    text-align: center;
+    width: 35%;
+    position: relative;
+    padding-bottom: 5vh;
+    padding-top: 10vh;
+    background: #00000041;
+    border-radius: 2vh;
+}
+
+.inpt {
+    padding: 1.5vh;
+    width: 70%;
+    border: none;
+    margin-bottom: 1vh;
+    border-radius: 1vh;
+    font-size: max(15px, 1vh);
+    box-shadow: 1vh 1vh 2vh #00000094;
+}
+
+.btn {
+    padding: 2vh;
+    color: #fff;
+    width: 75%;
+    border: none;
+    font-size: max(15px, 1vh);
+    border-radius: 1vh;
+    font-size: max(15px, 1vh);
+    box-shadow: 1vh 1vh 2vh #00000094;
+    background: linear-gradient(90deg, #16c4bb, #023b39);
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #cfcdcd;
+    box-shadow: 1vh 1vh 1vh #00000094;
+    background: linear-gradient(100deg, #108b85, #012726);
+}
+
+.btn:disabled {
+    color: #cfcdcd75;
+    box-shadow: none;
+    background: linear-gradient(100deg, #108b8573, #0127267c);
+}
+
+.requestTitle {
+    margin-bottom: 20%;
+    border-top-right-radius: 2vh;
+    font-size: max(20px, 2vh);
+    padding: 5vh 1vh 5vh;
+    width: 97%;
+    font-weight: normal;
+}
+
+
+@media (max-width: 1200px) {
+    body {
+        font-size: max(15px, 1vh);
+    }
+
+    .content {
+        width: 55%;
+    }
+}
+@media (max-width: 750px) {
+    body {
+        font-size: max(15px, 1vh);
+    }
+
+    .content {
+        width: 85%;
+    }
+}
+@media (max-width: 400px) {
+    body {
+        font-size: max(15px, 1vh);
+    }
+
+    .content {
+        width: 95%;
+    }
+}

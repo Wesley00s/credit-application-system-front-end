@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.header {
+    background: #091a7a;
+}
+
+.navbar {
+    max-width: 1280px;
+    height: 8vh;
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: max(18px, 1vh);
+    color: #fff;
+    padding-block: 3rem;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-list a {
+    font-size: max(18px, 1vh);
+    color: #fff;
+    padding-block: 3rem;
+}
+
+main {
+    height: calc(100vh - 8vh);
+    background: center / cover no-repeat linear-gradient(45deg, #0b1d83, #860097);
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+.hamburger::before,
+.hamburger::after 
+{
+    content: " ";
+    display: block;
+    width: 2rem;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 300ms;
+}
+
+@media (max-width: 750px) {
+    .hamburger {
+        display: block;
+        z-index: 3;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(45deg, #091a7a, #6e0372);
+        clip-path: circle(28px at 110% -2%);
+        transition: 1s ease-out;
+
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .nav-list a {
+        font-size: max(18px, 1vh);
+        opacity: 0;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 500ms 200ms;
+    }
+    .nav-list li:nth-child(2) a {
+        transition: 500ms 400ms;
+    }
+    .nav-list li:nth-child(3) a {
+        transition: 500ms 600ms;
+    }
+
+    .navbar.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .navbar.active .nav-list a {
+        opacity: 1;
+    }
+
+    .navbar.active .hamburger {
+        position: fixed;
+        top: 26px;
+        right: 1rem;
+        border-top-color: transparent;
+    }
+
+    .navbar.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .navbar.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
