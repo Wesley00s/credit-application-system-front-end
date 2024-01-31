@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="css/credit.css">
+    <script src="../../js/navbar.js" defer></script>
+    <script src="js/credit.js" defer></script>
+    <title>Credit Application System</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="home">
+                <img src="../../img/logo.png" alt="" class="logo">
+            </a>
+            <button class="hamburger"></button>
+            <ul class="nav-list">
+                <li class="links">
+                    <a href="../../index.html">Home</a>
+                </li>
+                <li class="links">
+                    <a href="../customer/registration.html">Register</a>
+                </li>
+                <li class="links">
+                    <a href="../profile/profile.html">Profile</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <div class="creditsContent">
+                    
+                    <div class="askCredits expand">
+                        <div class="credits">
+                            <div class="divMenuBtn">
+                                <button class="menuBtn">
+                                    Request credits
+                                </button> 
+
+                            </div>
+                        
+                            <div class="content1 hidden">
+                                <h2 class="requestTitle">
+                                    Request credits
+                                </h2>
+                                <form action="." method="post">
+                                    <input type="number" name="creditValue" class="inpt creditValue" placeholder="Credit value">
+                                    <input type="datetime" name="dayFirstInstallment" class="inpt dayFirstInstallment" placeholder="Day first intallment YYYY-MM-DD">
+                                    <input type="number" name="numberOfInstallments" class="inpt numberOfInstallments" placeholder="Number of installments">
+                                    <input type="number" name="costumerId" class="inpt costumerId" placeholder="Customer ID">
+                                    <button type="submit" class="btn" disabled>Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="askCredits2">
+                        <div class="credits2">
+                                <div class="divMenuBtn2">
+                                    <button class="menuBtn2">
+                                        Search my credits
+                                    </button>
+                                </div>
+                                <div class="content2 hidden">
+                                    <h2 class="requestTitle">
+                                        Search credits
+                                    </h2>
+                                    <form action="." method="get">
+                                        <input type="number" name="creditCode" class="inpt creditCode" placeholder="Credit code">
+                                        <input type="number" name="costumerId" class="inpt costumerId" placeholder="Customer ID">
+                                        <button type="submit" class="btn" disabled>Search</button>
+                                    </form>
+                                </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="askCredits3">
+                        <div class="credits3">
+                            <div class="divMenuBtn3">
+                                <button class="menuBtn3">
+                                    See my credits
+                                </button>
+                            </div>
+                            <div class="content3 hidden">
+                                <p>creditCode: </p>
+                                <p>creditValue": </p>
+                                <p>numberOfInstallments: </p>
+                                <p>status: </p>
+                                <p>emailCustomer: </p>
+                                <p>income: </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </header>
+
+</body>
+
+</html>

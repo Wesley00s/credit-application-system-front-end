@@ -36,16 +36,26 @@ body {
 
 .inpt {
     padding: 1.5vh;
+    background: none;
     width: 70%;
     border: none;
     margin-bottom: 1vh;
-    border-radius: 1vh;
     font-size: max(15px, 1vh);
-    box-shadow: 1vh 1vh 2vh #00000094;
+    border-bottom: #fff solid 1px;
+    color: #fff;
+}
+
+input::placeholder {
+  color: #c5c3c3;
+}
+
+input:focus {
+  outline: none;
 }
 
 
 .btn {
+    margin-top: 4vh;
     padding: 2vh;
     color: #fff;
     width: 75%;

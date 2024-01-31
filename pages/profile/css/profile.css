@@ -42,23 +42,33 @@ body {
     text-align: center;
     width: 35%;
     position: relative;
-    padding-bottom: 5vh;
-    padding-top: 10vh;
+    padding: 10vh 2vh;
     background: #00000041;
+    margin: 1vh;
     border-radius: 2vh;
 }
-
 .inpt {
     padding: 1.5vh;
+    background: none;
     width: 70%;
     border: none;
     margin-bottom: 1vh;
-    border-radius: 1vh;
     font-size: max(15px, 1vh);
-    box-shadow: 1vh 1vh 2vh #00000094;
+    border-bottom: #fff solid 1px;
+    color: #fff;
 }
 
+input::placeholder {
+  color: #c5c3c3;
+}
+
+input:focus {
+  outline: none;
+}
+
+
 .btn {
+    margin-top: 4vh;
     padding: 2vh;
     color: #fff;
     width: 75%;
@@ -84,14 +94,14 @@ body {
 }
 
 .requestTitle {
-    margin-bottom: 20%;
+    margin: -15% 10% 10% 0;
     border-top-right-radius: 2vh;
     font-size: max(20px, 2vh);
-    padding: 5vh 1vh 5vh;
-    width: 97%;
-    font-weight: normal;
-}
+    background: linear-gradient(-90deg, #0127267c, #08706d00);
+    padding: 5vh 1vh;
+    width: 100%;
 
+}
 
 @media (max-width: 1200px) {
     body {

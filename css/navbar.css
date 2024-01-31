@@ -131,3 +131,8 @@ main {
         top: -7px;
     }
 }
+
+.logo {
+    margin-top: 1vh;
+    width: 7vh;
+}
