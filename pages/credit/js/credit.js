@@ -1,6 +1,8 @@
 const form = document.querySelector('form');
 const inputs = [...document.querySelectorAll('.inpt')];
+const inputsGet = [...document.querySelectorAll('.inptGet')];
 const btn = document.querySelector('.btn');
+const btn2 = document.querySelector('.btn2');
 const creditValue = document.querySelector(".creditValue");
 const dayFirstInstallment = document.querySelector(".dayFirstInstallment");
 const numberOfInstallments = document.querySelector(".numberOfInstallments");
@@ -75,8 +77,28 @@ const releaseSubmission = () => {
     }
 }
 
+const releaseSubmissionGet = () => {
+    let toAllow = true;
+
+    inputsGet.forEach(input => { 
+        if (input.value.trim().length === 0) {
+            toAllow = false;
+        }
+    });
+
+    if (toAllow) {
+        btn2.removeAttribute('disabled');
+    } else {
+        btn2.setAttribute('disabled', 'disabled');
+    }
+}
+
 inputs.forEach(input => {
     input.addEventListener('input', releaseSubmission);
+});
+
+inputsGet.forEach(input => {
+    input.addEventListener('input', releaseSubmissionGet);
 });
 
 // const displayCreditData = (creditData) => {
@@ -121,7 +143,12 @@ const clear = () => {
     });
 }
 
+
+
+
+
 form.addEventListener("submit", (e) => { 
+    alert(e.target.value)
     e.preventDefault();
     register();
     clear();

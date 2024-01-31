@@ -70,7 +70,7 @@ main {
 @media (max-width: 750px) {
     .hamburger {
         display: block;
-        z-index: 3;
+        z-index: 991;
     }
 
     .nav-list {
@@ -88,7 +88,7 @@ main {
         align-items: center;
         gap: 0;
         pointer-events: none;
-        z-index: 2;
+        z-index: 900;
     }
 
     .nav-list a {
