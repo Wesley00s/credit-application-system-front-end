@@ -10,6 +10,9 @@ const password = document.querySelector(".password");
 const zipCode = document.querySelector(".zipCode");
 const street = document.querySelector(".street");
 
+let customerPassword;
+let customerEmail;
+
 const releaseSubmission = () => {
     let toAllow = true;
 
@@ -53,8 +56,9 @@ const register = () => {
         .then((res) => {
             console.log(res);
             btn.setAttribute('disabled', 'disabled');
-            if (res.status === 201)
+            if (res.status === 201) 
                 alert("Success to register!");
+            
             else 
                 alert("Fail to register!");
         })
@@ -70,5 +74,8 @@ const clear = () => {
 form.addEventListener("submit", (e) => { 
     e.preventDefault();
     register();
+
+    customerPassword = localStorage.setItem('password', password.value);
+    customerEmail = localStorage.setItem('email', email.value);
     clear();
 });

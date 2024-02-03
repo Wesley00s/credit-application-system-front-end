@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <script src="js/navbar.js" defer></script>
     <title>Credit Application System</title>
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar">
@@ -16,7 +20,7 @@
             <button class="hamburger"></button>
             <ul class="nav-list">
                 <li class="links">
-                    <a href="pages/customer/registration.html" >Register</a>
+                    <a href="pages/customer/login.html" class="login">Login</a>
                 </li>
                 <li class="links">
                     <a href="pages/credit/credit.html">Credits</a>
@@ -26,8 +30,25 @@
                 </li>
             </ul>
         </nav>
-        <main></main>
+        <main>
+            <h1 class="title">
+                <p class="prime">
+                    PrimeCredit
+                </p>
+                Nexus
+            </h1>
+            
+            <h2 class="slogan">
+                Welcome to <strong> <span style="color: #2b8f7e">PrimeCredit</span> <span style="color: #bfdfdf">Nexus</span> </strong>, where your credit management is on another level.
+                Unlocking Financial Potential: Your Journey to Greater Credit Confidence Begins Here!
+            </h2>
+            
+            <a href="pages/credit/credit.html" class="go">
+                Go
+            </a>
+            <img src="img/credit-person3.png" alt="" class="credit-person">
+        </main>
     </header>
-   
 </body>
+
 </html>

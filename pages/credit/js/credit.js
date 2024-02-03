@@ -1,4 +1,3 @@
-const form = document.querySelector('form');
 const inputs = [...document.querySelectorAll('.inpt')];
 const inputsGet = [...document.querySelectorAll('.inptGet')];
 const btn = document.querySelector('.btn');
@@ -20,7 +19,18 @@ const divMenuBtn = document.querySelector(".divMenuBtn");
 const divMenuBtn2 = document.querySelector(".divMenuBtn2");
 const divMenuBtn3 = document.querySelector(".divMenuBtn3");
 const creditCode = document.querySelector(".creditCode");
+const getCreditCode = document.querySelector(".getCreditCode");
+const getCustomerId = document.querySelector(".getCustomerId");
 
+const form1 = document.querySelector(".form1");
+const form2 = document.querySelector(".form2");
+
+const creditCodeContent = document.querySelector(".creditCodeContent");
+const creditCodeValue = document.querySelector(".creditCodeValue");
+const numberOfInstallmentsContent = document.querySelector(".numberOfInstallmentsContent");
+const statusContent = document.querySelector(".statusContent");
+const emailCustomerContent = document.querySelector(".emailCustomerContent");
+const incomeContent = document.querySelector(".incomeContent");
 
 divMenuBtn.addEventListener('click', () => {
     credits.classList.toggle("active");
@@ -101,15 +111,6 @@ inputsGet.forEach(input => {
     input.addEventListener('input', releaseSubmissionGet);
 });
 
-// const displayCreditData = (creditData) => {
-//     console.log("Cresit Data:", creditData);
-
-//     creditValue.textContent = creditData.creditValue
-//     dayFirstInstallment.textContent = creditData.dayFirstInstallment
-//     numberOfInstallments.textContent = creditData.numberOfInstallments
-//     costumerId.textContent = creditData.costumerId
-// };
-
 const register = () => {
     fetch("http://localhost:8080/api/credits",
         {
@@ -136,20 +137,61 @@ const register = () => {
         .catch((res) => { console.log(res) })
 };
 
-
 const clear = () => {
     inputs.forEach((input) => { 
         input.value = '';
     });
 }
 
+const get = () => {
+    fetch(`http://localhost:8080/api/credits/${getCreditCode.value}?customerId=${getCustomerId.value}`, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "GET",
+    })
+    .then((res) => {
+        console.log(res);
+        btn.setAttribute('disabled', 'disabled');
+        if (res.status === 200) {
+            return res.json();
+        } else {
+            alert("Fail to retrieve data!");
+        }
+    })
+    .then((creditDetails) => {
+        displayCreditData(creditDetails);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+};
 
+const displayCreditData = (creditData) => {
+    try {
+        console.log("Credit Data:", creditData);
+    
+        creditCodeContent.textContent = creditData.creditCode
+        creditCodeValue.textContent = creditData.creditValue
+        numberOfInstallmentsContent.textContent = creditData.numberOfInstallments
+        statusContent.textContent = creditData.status
+        emailCustomerContent.textContent = creditData.emailCustomer
+        incomeContent.textContent = creditData.income
 
+    } catch {
+        console.log("Cannot read data")
+    }
+};
 
-
-form.addEventListener("submit", (e) => { 
-    alert(e.target.value)
+form1.addEventListener("submit", (e) => { 
     e.preventDefault();
     register();
+    clear();
+});
+
+form2.addEventListener("submit", (e) => { 
+    e.preventDefault();
+    get();
     clear();
 });

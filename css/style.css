@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+main {
+    display: flex;
+    justify-content: end;
+    align-content: center;
+    align-items: end;
+    flex-direction: row-reverse;
+    color: #fff;
+}
+
+.credit-person {
+    position: absolute;
+    /* display: flex; */
+    left: 0;
+    height: 80%;
+    /* top: 22vh; */
+}
+
+.slogan {
+    position: relative;
+    bottom: 60%;
+    right:  10%;
+    width: 50%;
+    font-size: max(10px, 3vh);
+    font-weight: 400;
+    /* background: #e70000; */
+}
+
+.title {
+    position: absolute;
+    bottom: 80%;
+    /* right: 75%; */
+    left: 8%;
+    width: auto;
+    font-size: max(30px, 1vh);
+    display: flex;
+    background: linear-gradient(-90deg, #0a423048, #0a423002);
+    padding: 1.5vh 5vh;
+    color: #bfdfdf;
+    border-radius: 5vh;
+    font-weight: 500;
+    border: #0a423048 solid;
+
+    .prime {
+        margin-right: 5%;
+        color: #2b8f7e;
+    }
+}
+
+.go {
+    position: absolute;
+    right: 50vh;
+    top: 50vh;
+    padding: 1vh 10vh;
+    border: none;
+    background: linear-gradient(45deg, #07584b, #0e463dd3);
+    color: #fff;
+    border-radius: 1vh;
+    font-size: max(25px, 1vh);
+    box-shadow: .5vh .5vh 1vh #000;
+    transition: 500ms ease-in;
+}
+
+.go:hover {
+    background: linear-gradient(45deg, #05443a, #051815d3);
+    box-shadow: .2vh .2vh .5vh rgba(0, 0, 0, 0.363);
+
+}
+
+@media (max-width: 865px) {
+    main {
+        flex-wrap: wrap;
+    }
+
+    .credit-person {
+        display: none;
+    }
+    
+    .go {
+        margin-top: 15vh;
+        font-size: max(20px, 1vh);
+
+    }
+
+    .slogan {
+        width: 90%;
+        top: -10%;
+        font-size: max(25px, 1vh);
+    }
+
+    .title {
+        font-size: max(20px, 1vh);
+    }
+}
+
+
+@media (max-width: 1205px) {
+    .slogan {
+        bottom: 60%;
+        right: 1%;
+    }
+
+    .go {
+            right: 10vh;
+
+    }
+}
+
+@media (max-width: 1080px) {
+    .credit-person {
+        height: 50%;
+        bottom: 0%;
+        right: 1%;
+    }
+}

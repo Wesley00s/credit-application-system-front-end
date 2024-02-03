@@ -23,7 +23,7 @@
                     <a href="../../index.html">Home</a>
                 </li>
                 <li class="links">
-                    <a href="../customer/registration.html">Register</a>
+                    <a href="../customer/login.html">Register</a>
                 </li>
                 <li class="links">
                     <a href="../profile/profile.html">Profile</a>
@@ -47,7 +47,7 @@
                                 <h2 class="requestTitle">
                                     Request credits
                                 </h2>
-                                <form action="." method="post">
+                                <form action="." method="post" class="form1">
                                     <input type="number" name="creditValue" class="inpt creditValue" placeholder="Credit value">
                                     <input type="datetime" name="dayFirstInstallment" class="inpt dayFirstInstallment" placeholder="Day first intallment YYYY-MM-DD">
                                     <input type="number" name="numberOfInstallments" class="inpt numberOfInstallments" placeholder="Number of installments">
@@ -69,11 +69,31 @@
                                     <h2 class="requestTitle">
                                         Search credits
                                     </h2>
-                                    <form action="." method="get">
-                                        <input type="number" name="creditCode" class="inptGet creditCode" placeholder="Credit code">
-                                        <input type="number" name="costumerId" class="inptGet costumerId" placeholder="Customer ID">
+                                    <form action="." method="get" class="form2">
+                                        <input type="text" name="getCreditCode" class="inptGet getCreditCode" placeholder="Credit code">
+                                        <input type="number" name="getCustomerId" class="inptGet getCustomerId" placeholder="Customer ID">
                                         <button type="submit" class="btn2" disabled>Search</button>
                                     </form>
+                                    <ul class="listCreditCode">
+                                        <li>Credit Code:
+                                            <p class="creditContent creditCodeContent"></p>
+                                        </li>
+                                        <li>Credit Value: USD
+                                            <p class="creditContent creditCodeValue"></p>
+                                        </li>
+                                        <li>Number Of Installments:
+                                            <p class="creditContent numberOfInstallmentsContent"></p>
+                                        </li>
+                                        <li>Status:
+                                            <p class="creditContent statusContent"></p>
+                                        </li>
+                                        <li>Email Customer:
+                                            <p class="creditContent emailCustomerContent"></p>
+                                        </li>
+                                        <li>Income: USD
+                                            <p class="creditContent incomeContent"></p>
+                                        </li>
+                                    </ul>
                                 </div>
                         </div>
                         
@@ -87,12 +107,26 @@
                                 </button>
                             </div>
                             <div class="content3 hidden">
-                                <p>creditCode: </p>
-                                <p>creditValue": </p>
-                                <p>numberOfInstallments: </p>
-                                <p>status: </p>
-                                <p>emailCustomer: </p>
-                                <p>income: </p>
+                                <ul>
+                                    <li>Credit Code:
+                                        <p class="creditContent creditCodeContent"></p>
+                                    </li>
+                                    <li>Credit Value:
+                                        <p class="creditContent creditCodeValue"></p>
+                                    </li>
+                                    <li>Number Of Installments:
+                                        <p class="creditContent numberOfInstallmentsContent"></p>
+                                    </li>
+                                    <li>Status: 
+                                        <p class="creditContent statusContent"></p>
+                                    </li>
+                                    <li>Email Customer: 
+                                        <p class="creditContent emailCustomerContent"></p>
+                                    </li>
+                                    <li>Income: 
+                                        <p class="creditContent incomeContent"></p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         

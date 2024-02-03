@@ -1,17 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
     border: none;
     overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100vh;
     font-size: max(20px, 2vh);
     color: #fff;
-    font-family: sans-serif;
 }
 
 .box {

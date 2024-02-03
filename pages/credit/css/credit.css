@@ -5,9 +5,6 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     color: #fff;
 }
 
@@ -39,7 +36,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    top: 40vh;
+    /* top: 40vh; */
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -51,7 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    top: 40vh;
+    /* top: 40vh; */
     justify-content: start;
     align-items: start;
     align-content: center;
@@ -63,7 +60,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    top: 40vh;
+    /* top: 40vh; */
     justify-content: end;
     align-items:flex-end;
     align-content: center;
@@ -363,10 +360,12 @@ input:focus {
     clip-path: circle(120vh at 50% 50%);
     pointer-events: all;
     width: 100%;
+    top: -40vh;
     padding-top: 5vh;
     align-items: start;
     height: calc(100vh - 13vh);
     z-index: 10;
+
 }
 
 .credits2.active {
@@ -529,14 +528,14 @@ input:focus {
     .askCredits3 {
         align-items: center;
         width: 100%;
-        margin-top: -10vh;
+        margin-top: 22vh;
     }
     .credits {
-        margin-top: -12vh;
+        margin-top: -10vh;
     }
     .credits.active {
-        transform: translateY(-10vh);
-        margin-bottom: -10vh;
+        transform: translateY(-12vh);
+        margin-bottom: -12vh;
         z-index: 10;
 
         .menuBtn {
@@ -547,11 +546,11 @@ input:focus {
     }
 
     .credits2 {
-        margin-top: 18vh;
+        margin-top: 40vh;
     }
     .credits2.active {
-        transform: translateY(-40vh);
-        margin-bottom: -40vh;
+        transform: translateY(-62vh);
+        margin-bottom: -62vh;
 
         .menuBtn2 {
             position: absolute;
@@ -565,8 +564,8 @@ input:focus {
     }
 
     .credits3.active {
-        transform: translateY(-70vh);
-        margin-bottom: -70vh;
+        transform: translateY(-38vh); 
+        margin-bottom: -38vh; 
         z-index: 10;
 
         .menuBtn3 {
@@ -579,5 +578,25 @@ input:focus {
     .creditsContent {
         display: flex;
         flex-direction: column;
+    }
+}
+
+.listCreditCode {
+    list-style: none;
+    font-weight: 600;
+    margin-top: 10vh;
+    padding: 2vh;
+    background: linear-gradient(45deg, #16c4bb38, #00000062);
+    border-radius: 1vh;
+    font-size: max(15px, 1vh);
+
+    li {
+        display: flex;
+        flex-direction: row;
+    }
+
+    p {
+        margin-left: 1vh;
+        font-weight: normal;
     }
 }
