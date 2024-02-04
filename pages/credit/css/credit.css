@@ -30,7 +30,6 @@ body {
     width: fit-content;
 }
 
-
 .askCredits {
     position: absolute;
     display: flex;
@@ -102,6 +101,15 @@ body {
     border-radius: 2vh;
     opacity: 0;
     pointer-events: none;
+}
+
+.listCredits {
+    text-align-last: left;
+    width: fit-content;
+    list-style: none;
+    font-size: max(15px, 2vh);
+    padding: 1vh;
+    border-bottom: .2vh dotted #31878d;
 }
 
 .inpt {
@@ -309,12 +317,12 @@ input:focus {
     }
 }
 
-
 .show {
     display: block;
 }
 
 .credits {
+    margin-top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,11 +332,12 @@ input:focus {
     clip-path: circle(9vh at 50% 50%);
     transition: 1s ease-out;
     color: #fff;
-    background: linear-gradient(45deg, #091a7a, #6e0372);
+    background: linear-gradient(45deg, #1b6155, #021b17);
     z-index: 1;
 }
 
 .credits2 {
+    margin-top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -338,11 +347,12 @@ input:focus {
     clip-path: circle(9vh at 50% 50%);
     transition: 1s ease-out;
     color: #fff;
-    background: linear-gradient(45deg, #091a7a, #6e0372);
+    background: linear-gradient(45deg, #1b6155, #021b17);
     z-index: 9;
 }
 
 .credits3 {
+    margin-top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -350,13 +360,14 @@ input:focus {
     width: 35vh;
     height: 20vh;
     clip-path: circle(9vh at 50% 50%);
-    transition: 1s ease-out;
+    transition: 2s ease-out;
     color: #fff;
-    background: linear-gradient(45deg, #091a7a, #6e0372);
+    background: linear-gradient(45deg, #1b6155, #021b17);
     z-index: 0;
 }
 
 .credits.active {
+    margin-top: 0;
     clip-path: circle(120vh at 50% 50%);
     pointer-events: all;
     width: 100%;
@@ -369,6 +380,7 @@ input:focus {
 }
 
 .credits2.active {
+    margin-top: 0;
     clip-path: circle(120vh at 50% 50%);
     pointer-events: all;
     width: 100%;
@@ -379,57 +391,27 @@ input:focus {
 }
 
 .credits3.active {
-    clip-path: circle(120vh at 50% 50%);
+    margin-top: 0;
+    clip-path: circle(500vh at 50% 50%);
     pointer-events: all;
     width: 100%;
     padding-top: 5vh;
     align-items: start;
-    height: calc(100vh - 13vh);
     z-index: 10;
+    min-height: calc(100vh - 13vh);
+    height: auto;
 }
-
-.menuBtn {
-    color: #fff;
-    background:transparent;
-}
-
-.menuBtn2 {
-    color: #fff;
-    background:transparent;
-}
-
-.menuBtn3 {
-    color: #fff;
-    background:transparent;
-}
-
-.credits.active .menuBtn {
+.menuBtn,
+.menuBtn2,
+.menuBtn3, 
+.credits.active .menuBtn,
+.credits2.active .menuBtn2,
+.credits3.active .menuBtn3 {
     background: transparent;
     color: #fff;
 }
 
-.credits2.active .menuBtn2 {
-    background: transparent;
-    color: #fff;
-}
-
-.credits3.active .menuBtn2 {
-    background: transparent;
-    color: #fff;
-}
-
-.credits.active .menuBtn::after {
-    content: " ";
-    display: block;
-    width: 2rem;
-    height: 3px;
-    background: #fff;
-    margin-top: -2px;
-    position: relative;
-    transition: 300ms;
-    transform: rotate(45deg);
-}
-
+.credits.active .menuBtn::after,
 .credits2.active .menuBtn2::after {
     content: " ";
     display: block;
@@ -490,26 +472,22 @@ input:focus {
     transform: rotate(-45deg);
 }
 
+.listCredits li {
+    font-weight: 600;
+}
+
+.creditContent {
+    font-weight: normal;
+}
+
 .activeContent {
     opacity: 10;
     pointer-events: all;
     z-index: 10;
 }
 
-.menuBtn {
-    z-index: 1;
-    padding: 7vh;
-    font-size: max(15px, 2vh);
-    cursor: pointer;
-}
-
-.menuBtn2 {
-    z-index: 1;
-    padding: 7vh;
-    font-size: max(15px, 2vh);
-    cursor: pointer;
-}
-
+.menuBtn,
+.menuBtn2,
 .menuBtn3 {
     z-index: 1;
     padding: 7vh;
@@ -528,14 +506,15 @@ input:focus {
     .askCredits3 {
         align-items: center;
         width: 100%;
-        margin-top: 22vh;
-    }
+        margin-top: 50vh;
+    } 
     .credits {
-        margin-top: -10vh;
+        transform: translateY(-21vh);
+
     }
     .credits.active {
-        transform: translateY(-12vh);
-        margin-bottom: -12vh;
+        transform: translateY(-50vh);
+        margin-bottom: -50vh; 
         z-index: 10;
 
         .menuBtn {
@@ -546,11 +525,12 @@ input:focus {
     }
 
     .credits2 {
-        margin-top: 40vh;
+                transform: translateY(-42vh);
+
     }
     .credits2.active {
-        transform: translateY(-62vh);
-        margin-bottom: -62vh;
+        transform: translateY(-50vh);
+        margin-bottom: -50vh;
 
         .menuBtn2 {
             position: absolute;
@@ -559,13 +539,9 @@ input:focus {
         }
     }
 
-    .askCredits3 {
-        margin-top: 38vh;
-    }
-
     .credits3.active {
-        transform: translateY(-38vh); 
-        margin-bottom: -38vh; 
+        transform: translateY(-50vh);
+        margin-bottom: -50vh; 
         z-index: 10;
 
         .menuBtn3 {
@@ -598,5 +574,11 @@ input:focus {
     p {
         margin-left: 1vh;
         font-weight: normal;
+    }
+}
+
+@media (max-width: 500px) {
+    .listCredits {
+        font-size: max(15px, 1vh);
     }
 }

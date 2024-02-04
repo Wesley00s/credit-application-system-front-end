@@ -13,11 +13,10 @@ const releaseSubmission = () => {
         }
     });
 
-    if (toAllow) {
+    if (toAllow) 
         btn.removeAttribute('disabled');
-    } else {
+    else 
         btn.setAttribute('disabled', 'disabled');
-    }
 }
 
 inputs.forEach(input => {

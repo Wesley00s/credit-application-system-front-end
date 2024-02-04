@@ -19,113 +19,30 @@ body {
 }
 
 .user-info {
+    width: 100%;
+    margin: auto;
+    transform: translateY(30vh);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1vh;
     width: fit-content;
-}
-
-
-.box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    border-radius: 2vh;
-}
-
-.content {
-    text-align: center;
-    width: 35%;
-    position: relative;
-    padding: 10vh 2vh;
-    background: #00000041;
-    margin: 1vh;
-    border-radius: 2vh;
-}
-.inpt {
-    padding: 1.5vh;
-    background: none;
-    width: 70%;
-    border: none;
-    margin-bottom: 1vh;
-    font-size: max(15px, 1vh);
-    border-bottom: #fff solid 1px;
-    color: #fff;
-}
-
-input::placeholder {
-  color: #c5c3c3;
-}
-
-input:focus {
-  outline: none;
-}
-
-
-.btn {
-    margin-top: 4vh;
-    padding: 2vh;
-    color: #fff;
-    width: 75%;
-    border: none;
-    font-size: max(15px, 1vh);
+    font-size: max(15px, 2vh);
+    background: linear-gradient(45deg, #16c4bb38, #00000062);
+    padding: 5vh 10vh;
     border-radius: 1vh;
-    font-size: max(15px, 1vh);
-    box-shadow: 1vh 1vh 2vh #00000094;
-    background: linear-gradient(90deg, #16c4bb, #023b39);
-    cursor: pointer;
 }
 
-.btn:hover {
-    color: #cfcdcd;
-    box-shadow: 1vh 1vh 1vh #00000094;
-    background: linear-gradient(100deg, #108b85, #012726);
-}
+@media (max-width: 475px) {
+    .user-info {
+        padding: 5vh;
+            font-size: max(15px, 1.5vh);
 
-.btn:disabled {
-    color: #cfcdcd75;
-    box-shadow: none;
-    background: linear-gradient(100deg, #108b8573, #0127267c);
-}
-
-.requestTitle {
-    margin: -15% 10% 10% 0;
-    border-top-right-radius: 2vh;
-    font-size: max(20px, 2vh);
-    background: linear-gradient(-90deg, #0127267c, #08706d00);
-    padding: 5vh 1vh;
-    width: 100%;
-
-}
-
-@media (max-width: 1200px) {
-    body {
-        font-size: max(15px, 1vh);
-    }
-
-    .content {
-        width: 55%;
     }
 }
-@media (max-width: 750px) {
-    body {
-        font-size: max(15px, 1vh);
-    }
 
-    .content {
-        width: 85%;
-    }
-}
-@media (max-width: 400px) {
-    body {
-        font-size: max(15px, 1vh);
-    }
-
-    .content {
-        width: 95%;
+@media (max-width: 330px) {
+    .user-info {
+        padding: 1vh;
     }
 }

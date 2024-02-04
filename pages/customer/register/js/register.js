@@ -75,6 +75,10 @@ const clear = () => {
     });
 }
 
+
+
+
+
 form.addEventListener("submit", (e) => { 
     e.preventDefault();
     register();

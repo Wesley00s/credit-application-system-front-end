@@ -13,7 +13,7 @@ const customerEmail = localStorage.getItem('email');
 const customerPassword = localStorage.getItem('password');
 
 
-const displayCustomerData = (customerData) => {
+const customerData = (customerData) => {
 
     firstName.textContent = customerData.firstName
     lastName.textContent = customerData.lastName
@@ -41,7 +41,7 @@ const get = () => {
         }
     })
     .then((customerDetails) => {
-        displayCustomerData(customerDetails);
+        customerData(customerDetails);
     })
     .catch((error) => {
         console.error('Error:', error);

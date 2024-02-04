@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/credit.css">
     <script src="../../js/navbar.js" defer></script>
     <script src="js/credit.js" defer></script>
+    <script src="js/createElements.js" defer></script>
     <title>Credit Application System</title>
 </head>
 
@@ -48,7 +49,6 @@
                                     <input type="number" name="creditValue" class="inpt creditValue" placeholder="Credit value">
                                     <input type="datetime" name="dayFirstInstallment" class="inpt dayFirstInstallment" placeholder="Day first intallment YYYY-MM-DD">
                                     <input type="number" name="numberOfInstallments" class="inpt numberOfInstallments" placeholder="Number of installments">
-                                    <!-- <input type="number" name="costumerId" class="inpt costumerId" placeholder="Customer ID"> -->
                                     <button type="submit" class="btn" disabled>Send</button>
                                 </form>
                             </div>
@@ -68,7 +68,6 @@
                                     </h2>
                                     <form action="." method="get" class="form2">
                                         <input type="text" name="getCreditCode" class="inptGet getCreditCode" placeholder="Credit code">
-                                        <!-- <input type="number" name="getCustomerId" class="inptGet getCustomerId" placeholder="Customer ID"> -->
                                         <button type="submit" class="btn2" disabled>Search</button>
                                     </form>
                                     <ul class="listCreditCode">
@@ -81,14 +80,6 @@
                                         <li>Number Of Installments:
                                             <p class="creditContent numberOfInstallmentsContent"></p>
                                         </li>
-                                        <li>Status:
-                                            <p class="creditContent statusContent"></p>
-                                        </li>
-                                        <li>Email Customer:
-                                            <p class="creditContent emailCustomerContent"></p>
-                                        </li>
-                                        <li>Income: USD
-                                            <p class="creditContent incomeContent"></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -104,26 +95,10 @@
                                 </button>
                             </div>
                             <div class="content3 hidden">
-                                <ul>
-                                    <li>Credit Code:
-                                        <p class="creditContent creditCodeContent"></p>
-                                    </li>
-                                    <li>Credit Value:
-                                        <p class="creditContent creditCodeValue"></p>
-                                    </li>
-                                    <li>Number Of Installments:
-                                        <p class="creditContent numberOfInstallmentsContent"></p>
-                                    </li>
-                                    <li>Status: 
-                                        <p class="creditContent statusContent"></p>
-                                    </li>
-                                    <li>Email Customer: 
-                                        <p class="creditContent emailCustomerContent"></p>
-                                    </li>
-                                    <li>Income: 
-                                        <p class="creditContent incomeContent"></p>
-                                    </li>
-                                </ul>
+                                <h2 class="requestTitle">
+                                    See my credit list
+                                </h2>
+                                <p class="pMsg">No credits yet</p>
                             </div>
                         </div>
                         

@@ -12,10 +12,8 @@ main {
 
 .credit-person {
     position: absolute;
-    /* display: flex; */
     left: 0;
     height: 80%;
-    /* top: 22vh; */
 }
 
 .slogan {
@@ -25,13 +23,11 @@ main {
     width: 50%;
     font-size: max(10px, 3vh);
     font-weight: 400;
-    /* background: #e70000; */
 }
 
 .title {
     position: absolute;
     bottom: 80%;
-    /* right: 75%; */
     left: 8%;
     width: auto;
     font-size: max(30px, 1vh);
