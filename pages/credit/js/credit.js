@@ -5,7 +5,6 @@ const btn2 = document.querySelector('.btn2');
 const creditValue = document.querySelector(".creditValue");
 const dayFirstInstallment = document.querySelector(".dayFirstInstallment");
 const numberOfInstallments = document.querySelector(".numberOfInstallments");
-const costumerId = document.querySelector(".costumerId");
 const credits = document.querySelector(".credits");
 const credits2 = document.querySelector(".credits2");
 const credits3 = document.querySelector(".credits3");
@@ -20,7 +19,46 @@ const divMenuBtn2 = document.querySelector(".divMenuBtn2");
 const divMenuBtn3 = document.querySelector(".divMenuBtn3");
 const creditCode = document.querySelector(".creditCode");
 const getCreditCode = document.querySelector(".getCreditCode");
-const getCustomerId = document.querySelector(".getCustomerId");
+
+
+const customerPassword = localStorage.getItem('password');
+const customerEmail = localStorage.getItem('email');
+
+let getCustomerId;
+const customerId = (customerData) => {
+    console.log(customerData);
+    let id = customerData.customerId;
+    localStorage.setItem('customerId', id);
+};
+
+const getCustomer = () => {
+    fetch(`http://localhost:8080/api/customers/${customerEmail}/${customerPassword}`, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "GET",
+    })
+    .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+            return res.json();
+        } else {
+            alert("Fail to retrieve data!");
+        }
+    })
+    .then((customerDetails) => {
+        customerId(customerDetails);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+    getCustomerId = localStorage.getItem('customerId');
+};
+getCustomer()
+
+
 
 const form1 = document.querySelector(".form1");
 const form2 = document.querySelector(".form2");
@@ -123,14 +161,16 @@ const register = () => {
                 creditValue: creditValue.value,
                 dayFirstInstallment: dayFirstInstallment.value,
                 numberOfInstallments: numberOfInstallments.value,
-                costumerId: costumerId.value
+                costumerId: getCustomerId
             })
         })
         .then((res) => {
             console.log(res);
             btn.setAttribute('disabled', 'disabled');
-            if (res.status === 201)
+            if (res.status === 201) 
+
                 alert("Success to register!");
+        
             else 
                 alert("Fail to register!");
         })
@@ -144,7 +184,7 @@ const clear = () => {
 }
 
 const get = () => {
-    fetch(`http://localhost:8080/api/credits/${getCreditCode.value}?customerId=${getCustomerId.value}`, {
+    fetch(`http://localhost:8080/api/credits/${getCreditCode.value}?customerId=${getCustomerId}`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

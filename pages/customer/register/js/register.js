@@ -12,6 +12,7 @@ const street = document.querySelector(".street");
 
 let customerPassword;
 let customerEmail;
+let customerId;
 
 const releaseSubmission = () => {
     let toAllow = true;
@@ -35,34 +36,37 @@ inputs.forEach(input => {
 
 
 const register = () => {
-    fetch("http://localhost:8080/api/customers",
-        {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify({
-                firstName: firstName.value,
-                lastName: lastName.value,
-                cpf: cpf.value,
-                income: income.value,
-                email: email.value,
-                password: password.value,
-                zipCode: zipCode.value,
-                street: street.value
-            })
+    fetch("http://localhost:8080/api/customers", {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+            firstName: firstName.value,
+            lastName: lastName.value,
+            cpf: cpf.value,
+            income: income.value,
+            email: email.value,
+            password: password.value,
+            zipCode: zipCode.value,
+            street: street.value
         })
-        .then((res) => {
-            console.log(res);
-            btn.setAttribute('disabled', 'disabled');
-            if (res.status === 201) 
-                alert("Success to register!");
-            
-            else 
-                alert("Fail to register!");
-        })
-        .catch((res) => { console.log(res) })
+    })
+    .then((res) => {
+        console.log(res);
+        btn.setAttribute('disabled', 'disabled');
+        if (res.status === 201) {
+            alert("Success to register!");
+            window.location.href = '../../../../pages/profile/profile.html';
+        }
+        else 
+            alert("Fail to register!");
+    })
+    .catch((res) => { console.log(res) })
+    
+    customerPassword = localStorage.setItem('password', password.value);
+    customerEmail = localStorage.setItem('email', email.value);
 };
 
 const clear = () => {
@@ -74,8 +78,5 @@ const clear = () => {
 form.addEventListener("submit", (e) => { 
     e.preventDefault();
     register();
-
-    customerPassword = localStorage.setItem('password', password.value);
-    customerEmail = localStorage.setItem('email', email.value);
     clear();
 });
